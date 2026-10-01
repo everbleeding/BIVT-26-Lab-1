@@ -25,7 +25,7 @@ namespace Lab1
             bool answer = false;
 
             // code here
-            if (( (d+f) /2 ) > 0)
+            if (( (d+f) / 2 ) > 0)
             {
                 answer = true;
             }
@@ -43,7 +43,7 @@ namespace Lab1
             bool answer = false;
 
             // code here
-            if ((a+b) > (Math.Abs(a + b)) / 2)
+            if ((a+b) > (Math.Abs(a)+ Math.Abs(b)) / 2.0)
             {
                 answer = true;
             }
@@ -60,15 +60,15 @@ namespace Lab1
             int answer = 0;
 
             // code here
-            if (a > b && a > c)
+            if (a >= b && a >= c)
             {
                 answer = a;
             }
-            if (b > a && b > c)
+            else if (b >= a && b >= c)
             {
                 answer = b;
             }
-            if (c > a && c > b)
+            else if (c >= a && c >= b)
             {
                 answer = c;
             }
@@ -88,7 +88,7 @@ namespace Lab1
             else if (Math.Abs(x) <= 1)
             {
                 answer = x * x - 1;
-         
+
             }
             // end
 
@@ -131,27 +131,8 @@ namespace Lab1
             bool answer = false;
 
             // code here
-
-            int sleep = 4 * 60;   
-            int wake = 14 * 60;   
-
-            for (int day = 1; day <= X; day++)
-            {
-                if (day % 2 != 0)
-                {
-                    sleep-= Y;
-                }
-                wake -= 60;
-
-                int dlitelnst = wake - sleep;
-
-                if (wake == 7 * 60 && dlitelnst >= 7 * 60 && dlitelnst <= 9 * 60)
-                {
-                    answer = true;
-                    break;
-                }
-            }
-
+            int sleep = 180 + ((X + 1) / 2) * Y;
+            answer = X >= 7 && sleep >= 420 && sleep <= 540;
             // end
 
             return answer;
